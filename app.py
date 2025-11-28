@@ -167,19 +167,18 @@ st.markdown("""
     /* ==================== Button Styles ==================== */
     .stButton > button {
         width: 100%;
-        border-radius: 12px;
-        font-weight: 700;
+        border-radius: 10px;
+        font-weight: 600;
         transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
     }
     
     /* Predict Button */
     div[data-testid="stButton"]:first-of-type > button {
         background: linear-gradient(135deg, #06a77d 0%, #05896a 100%) !important;
         color: white !important;
-        font-size: 1.2em;
-        padding: 16px 30px;
+        font-size: 1em;
+        padding: 12px 20px;
         border: none !important;
         box-shadow: 0 4px 15px rgba(6, 167, 125, 0.4);
     }
@@ -194,8 +193,8 @@ st.markdown("""
     div[data-testid="stButton"]:last-of-type > button {
         background: linear-gradient(135deg, #f77f00 0%, #d67000 100%) !important;
         color: white !important;
-        font-size: 1em;
-        padding: 12px 25px;
+        font-size: 0.9em;
+        padding: 10px 20px;
         border: none !important;
         box-shadow: 0 3px 10px rgba(247, 127, 0, 0.3);
         margin-top: 10px;
@@ -600,7 +599,7 @@ for key, default in DEFAULT_VALUES.items():
 # ==============================================================================
 # Try to load hospital logo
 logo_base64 = load_image_as_base64("hospital_logo.png")
-logo_html = f'<img src="data:image/png;base64,{logo_base64}" style="height:100px; margin-right:20px; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));">' if logo_base64 else '🏥'
+logo_html = f'<img src="data:image/png;base64,{logo_base64}" style="height:160px; margin-right:25px; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));">' if logo_base64 else '🏥'
 
 st.markdown(f"""
 <div class="custom-header">
@@ -715,7 +714,7 @@ with st.sidebar:
     col1, col2 = st.columns(2)
     
     with col1:
-        predict_btn = st.button("🔮 PREDICT RISK", use_container_width=True, type="primary")
+        predict_btn = st.button("🔮 Calculate", use_container_width=True, type="primary")
     
     with col2:
         reset_btn = st.button("🔄 Reset", use_container_width=True)
@@ -829,13 +828,12 @@ st.markdown("""
 <div class="app-footer">
     <p>
         <span class="disclaimer">⚠ DISCLAIMER:</span>
-        This CMVT Risk Prediction System is based on a CatBoost model trained on clinical data. 
-        It is intended for research and clinical reference purposes only. 
-        All clinical decisions should be made by qualified healthcare professionals after comprehensive 
-        evaluation of the patient's complete medical history, physical examination, and other relevant 
-        diagnostic information. This tool does not provide medical advice and should not be used as 
-        a substitute for professional medical judgment.
     </p>
+    <div style="text-align: left; padding: 0 20px; line-height: 1.8;">
+        <p><b>a.</b> This website is designed to deploy optimal CatBoost algorithms to develop and validate a model for predicting calf muscle vein thrombosis (CMVT) risk in hospitalized CKD patients.</p>
+        <p><b>b.</b> The risk of diagnosis for CMVT can be predicted by simply inputting the patient's 7 clinical variables on the left side.</p>
+        <p><b>c.</b> All clinical decisions should be made by qualified healthcare professionals after comprehensive evaluation of the patient's complete medical history, physical examination, and other relevant diagnostic information. This tool does not provide medical advice and should not be used as a substitute for professional medical judgment. It is intended for research and clinical reference purposes only.</p>
+    </div>
     <hr style="border-top: 1px solid #dee2e6; margin: 20px 0;">
     <p style="font-size: 0.95em;">
         Developed by WeiXia, Center for Scientific Research and Medical Transformation, 
