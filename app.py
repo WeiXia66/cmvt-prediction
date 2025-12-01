@@ -1,10 +1,4 @@
 # ==============================================================================
-# CatBoost CMVT Risk Prediction Model - Streamlit Version
-# Version: 2.0 - Migrated from R Shiny with identical styling
-# Author: Thomas Webster (何思吉)
-# Date: 2025-11-28
-# Features: Pie Chart + Feature Importance Plot + Enhanced UI
-# ==============================================================================
 
 import streamlit as st
 import pandas as pd
